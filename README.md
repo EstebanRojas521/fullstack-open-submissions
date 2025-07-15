@@ -7,3 +7,5 @@ The course covers modern web development with a focus on building single-page ap
 Each part of the course builds progressively on the previous, with exercises structured around real-world applications.
 
 📁 Directory structure follows partX/project-name for clarity and organization.
+
+Link to the course: https://fullstackopen.com/en/
