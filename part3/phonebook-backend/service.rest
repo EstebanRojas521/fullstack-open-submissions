@@ -1,0 +1,23 @@
+### DELETE person
+DELETE http://localhost:3001/api/person/delete/1
+
+### GET all persons
+GET http://localhost:3001/api/persons
+
+### POST create person
+POST http://localhost:3001/api/persons/create
+Content-Type: application/json
+
+{
+  "name": "Jo",
+  "number": "123-456-7890"
+}
+
+
+### GET one person
+GET http://localhost:3001/api/persons/6885c7663b2e0a2d5199d631
+
+### GET info of lenght of data base
+
+GET http://localhost:3001/info
+

@@ -1,5 +1,4 @@
 import { useState , useEffect} from 'react'
-import axios from 'axios'
 import phonebookServices from './services/phonebookServices'
 import './index.css'
 
@@ -29,7 +28,8 @@ const DeleteButton = ({ person, setPersons, persons , setFeedBack}) => {
         .then(() => {
           setPersons(persons.filter(p => p.id !== person.id));
         })
-        .catch(error => {
+        .catch(() => {
+          //change this error maybe. This is not always the case if it fails.
           setFeedBack(`Information of ${person.name} has already been removed from server`)
         });
     }
@@ -102,7 +102,6 @@ const App = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    var newFeedback = "Person added succesfully."
     const newPerson = {
       name: newName,
       number: newNumber,
@@ -131,7 +130,7 @@ const App = () => {
         setFeedBack("Addeded person succesfully.");
       })
       .catch(error => {
-        alert(error.message);
+        setFeedBack(error.response?.data?.error || "Something went wrong");
       });
     }
 
